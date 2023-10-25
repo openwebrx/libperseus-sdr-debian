@@ -1,2 +1,3 @@
 0100-build-dynamic-perseustest
 0050-add-so-version
+0200-fix-udev-install-location
