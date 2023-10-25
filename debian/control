@@ -9,17 +9,17 @@ Homepage: https://microtelecom.it/
 Vcs-Git: https://github.com/Microtelecom/libperseus-sdr.git
 Vcs-Browser: https://github.com/Microtelecom/libperseus-sdr
 
-Package: libperseus-sdr0.8
+Package: libperseus-sdr-0.8
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: SDK library for Microtelecom Perseus SDR devices
 
-Package: libperseus-dev
+Package: libperseus-sdr-dev
 Architecture: any
-Depends: libperseus-sdr0.8 (=${binary:Version})
+Depends: libperseus-sdr-0.8 (=${binary:Version})
 Description: SDK library for Microtelecom Perseus SDR devices - development files
 
 Package: perseus-tools
-Depends: libperseus-sdr0.8 (=${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
+Depends: libperseus-sdr-0.8 (=${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
 Architecture: any
 Description: Microtelecom Perseus SDR device tools
