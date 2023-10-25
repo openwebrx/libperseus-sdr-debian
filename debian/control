@@ -13,13 +13,17 @@ Package: libperseus-sdr-0.8
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: SDK library for Microtelecom Perseus SDR devices
+ Contains the library for other applications to access Perseus SDR devices
 
 Package: libperseus-sdr-dev
 Architecture: any
 Depends: libperseus-sdr-0.8 (=${binary:Version}), ${misc:Depends}
 Description: SDK library for Microtelecom Perseus SDR devices - development files
+ Development files for compiling applications that want to access Perseus SDR
+ devices
 
 Package: perseus-tools
 Depends: libperseus-sdr-0.8 (=${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
 Architecture: any
 Description: Microtelecom Perseus SDR device tools
+ A set of tools for managing Perseus SDR devices on the command line
