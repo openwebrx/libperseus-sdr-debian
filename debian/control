@@ -12,3 +12,11 @@ Vcs-Browser: https://github.com/Microtelecom/libperseus-sdr
 Package: libperseus-sdr0.8
 Architecture: any
 Description: SDK library for Microtelecom Perseus SDR devices
+
+Package: libperseus-dev
+Architegure: any
+Description: SDK library for Microtelecom Perseus SDR devices - development files
+
+Package: perseus-tools
+Architecture: any
+Description: Microtelecom Perseus SDR device tools
