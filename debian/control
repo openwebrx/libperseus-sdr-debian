@@ -1,0 +1,14 @@
+Source: libperseus-sdr
+Maintainer: Jakob Ketterl <jakob.ketterl@gmx.de>
+Section: hamradio
+Priority: optional
+Rules-Requires-Root: no
+Standards-Version: 4.2.0
+Build-Depends: debhelper (>= 11), libusb-1.0-0-dev
+Homepage: https://microtelecom.it/
+Vcs-Git: https://github.com/Microtelecom/libperseus-sdr.git
+Vcs-Browser: https://github.com/Microtelecom/libperseus-sdr
+
+Package: libperseus-sdr0.8
+Architecture: any
+Description: SDK library for Microtelecom Perseus SDR devices
