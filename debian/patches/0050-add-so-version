@@ -4,10 +4,10 @@ Author: Jakob Ketterl <jakob.ketterl@gmx.de>
 * Parse the version and pass major.minor.patch to the linker. this results in
   the shared library to be suffixed correctly (libpserseus-sdr.so.0.8.1
   instead of libperseus-sdr.so.0.0.0)
-Index: b/Makefile.am
+Index: libperseus-sdr-debian/Makefile.am
 ===================================================================
---- a/Makefile.am
-+++ b/Makefile.am
+--- libperseus-sdr-debian.orig/Makefile.am
++++ libperseus-sdr-debian/Makefile.am
 @@ -42,6 +42,13 @@ libperseus_sdr_la_CFLAGS = $(AM_CFLAGS)
  libperseus_sdr_la_SOURCES =  perseus-sdr.c perseuserr.c perseusfx2.c perseus-in.c \
                               perseusfx2.h perseus-in.h perseus-sdr.h fpga_data.h
@@ -22,10 +22,10 @@ Index: b/Makefile.am
  nodist_libperseus_sdr_la_SOURCES = fpga_data.c
  
  hdrdir = $(includedir)
-Index: b/configure.ac
+Index: libperseus-sdr-debian/configure.ac
 ===================================================================
---- a/configure.ac
-+++ b/configure.ac
+--- libperseus-sdr-debian.orig/configure.ac
++++ libperseus-sdr-debian/configure.ac
 @@ -131,7 +131,7 @@ case $backend in
      AC_DEFINE(OS_WINDOWS, 1, [Windows backend])
      AC_SUBST(OS_WINDOWS)
