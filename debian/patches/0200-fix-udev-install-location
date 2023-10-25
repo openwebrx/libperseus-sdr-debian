@@ -3,9 +3,11 @@ Author: Jakob Ketterl <jakob.ketterl@gmx.de>
 
 * udev files should not go into bindir. This patch sets the correct path.
 * also gets rid of hooks to create linux groups, this is done by postinst.
+Index: b/Makefile.am
+===================================================================
 --- a/Makefile.am
 +++ b/Makefile.am
-@@ -76,14 +76,8 @@
+@@ -76,14 +76,8 @@ dist_pkgdata_DATA = $(udev_DATA)
  # sudo udevadm control --reload-rules
  #
  udevrule_DATA = $(top_srcdir)/95-perseus.rules

@@ -2,9 +2,11 @@ Description: Prefer dynamically linked binary for perseustest
 Author: Jakob Ketterl <jakob.ketterl@gmx.de>
 
 * link perseustest dynamically.
+Index: b/examples/Makefile.am
+===================================================================
 --- a/examples/Makefile.am
 +++ b/examples/Makefile.am
-@@ -25,14 +25,11 @@
+@@ -25,14 +25,11 @@ AM_LDFLAGS = -ldl
  endif
  
  
