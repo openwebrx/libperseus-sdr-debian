@@ -1,0 +1,33 @@
+Description: Add version to linker flags
+Author: Jakob Ketterl <jakob.ketterl@gmx.de>
+
+* Parse the version and pass major.minor.patch to the linker. this results in
+  the shared library to be suffixed correctly (libpserseus-sdr.so.0.8.1
+  instead of libperseus-sdr.so.0.0.0)
+--- a/Makefile.am
++++ b/Makefile.am
+@@ -42,6 +42,13 @@
+ libperseus_sdr_la_SOURCES =  perseus-sdr.c perseuserr.c perseusfx2.c perseus-in.c \
+                              perseusfx2.h perseus-in.h perseus-sdr.h fpga_data.h
+ 
++# get major / minor / patch from version number
++VERSION_MAJOR=`echo "${PACKAGE_VERSION}"|cut -d '.' -f1`
++VERSION_MINOR=`echo "${PACKAGE_VERSION}"|cut -d '.' -f2`
++VERSION_PATCH=`echo "${PACKAGE_VERSION}"|cut -d '.' -f3`
++
++libperseus_sdr_la_LDFLAGS = -release $(VERSION_MAJOR).$(VERSION_MINOR).$(VERSION_PATCH)
++
+ nodist_libperseus_sdr_la_SOURCES = fpga_data.c
+ 
+ hdrdir = $(includedir)
+--- a/configure.ac
++++ b/configure.ac
+@@ -131,7 +131,7 @@
+     AC_DEFINE(OS_WINDOWS, 1, [Windows backend])
+     AC_SUBST(OS_WINDOWS)
+     #LIBS=""
+-    LTLDFLAGS="${LTLDFLAGS} -avoid-version -Wl,--add-stdcall-alias"
++    LTLDFLAGS="${LTLDFLAGS} -Wl,--add-stdcall-alias"
+ 
+     #CFLAGS="$CFLAGS -I../libusb-1.0.last/"
+     #CXXFLAGS="$CXXFLAGS -I../libusb-1.0.last/"

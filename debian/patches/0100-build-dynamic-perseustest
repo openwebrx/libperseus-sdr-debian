@@ -1,0 +1,23 @@
+Description: Prefer dynamically linked binary for perseustest
+Author: Jakob Ketterl <jakob.ketterl@gmx.de>
+
+* link perseustest dynamically.
+--- a/examples/Makefile.am
++++ b/examples/Makefile.am
+@@ -25,14 +25,11 @@
+ endif
+ 
+ 
+-bin_PROGRAMS = perseustest_dyn perseustest
++bin_PROGRAMS = perseustest
+ check_PROGRAMS = simple
+ 
+ perseustest_SOURCES = perseustest.c fifo.c fifo.h $(top_srcdir)/perseus-sdr.h
+-perseustest_LDADD   = ../libperseus-sdr.a
+-
+-perseustest_dyn_SOURCES = perseustest.c fifo.c fifo.h $(top_srcdir)/perseus-sdr.h
+-perseustest_dyn_LDADD   = ../libperseus-sdr.la
++perseustest_LDADD   = ../libperseus-sdr.la
+ 
+ simple_SOURCES = simple.c $(top_srcdir)/perseus-sdr.h
+ simple_LDADD   = ../libperseus-sdr.la
