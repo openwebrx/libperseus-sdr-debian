@@ -1,0 +1,15 @@
+#!/bin/bash
+
+set -euo pipefail
+
+case "$1" in
+  configure|reconfigure)
+    addgroup --system --quiet perseususb
+  ;;
+  *)
+    echo "postinst called with unknown argument '$1'" 1>&2
+    exit 1
+  ;;
+esac
+
+#DEBHELPER#
